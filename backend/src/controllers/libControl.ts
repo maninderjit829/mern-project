@@ -8,7 +8,8 @@ import BookSchema from "../schemas/book";
 export const getBooks: RequestHandler = async (req, res, next) => {            //It is endpoint for HTTP 'get' request
     //res.send("Hola, madristas!");
     try {
-        //throw Error("Arsenal!!!!!!");
+        //throw createHttpError(401)
+        // throw Error("Arsenal!!!!!!");
         const books = await BookSchema.find().exec();
 
         // if (!books) {
@@ -48,8 +49,8 @@ export const getaBook: RequestHandler = async (req, res, next) => {
 interface CreateBookBody {
     title?: string,
     author?: string,
-    description: string,
-    isbn: Number
+    description?: string,
+    isbn?: Number
 }
 export const createBook: RequestHandler<unknown, unknown, CreateBookBody, unknown> = async (req, res, next) => {
     const title = req.body.title;

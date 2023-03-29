@@ -8,7 +8,7 @@ const bookSchema = new Schema({
     author: { type: String, required: true },
     isbn: { type: Number },
     description: { type: String },
-});
+}, { timestamps: true });
 
 //the following step(s) are necessary in 'Typescript'
 type Book = InferSchemaType<typeof bookSchema>;
