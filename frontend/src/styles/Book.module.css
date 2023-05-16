@@ -1,0 +1,13 @@
+.bookCover{
+    background-color: #caefd1;
+
+}
+
+.bookBody{
+    overflow:hidden;
+    mask-image: linear-gradient(180deg, #1d0303 60%, transparent);
+}
+
+.bookText{
+    white-space: pre-line;
+}
